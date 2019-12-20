@@ -24,7 +24,7 @@ public class MyTodoListViewModel {
 
 ## 將 ViewModel 載入到元件
 在 MVVM 中是透過寫在 zul 的 data binding 敘述將元件的屬性綁定到 ViewModel 中的屬性來載入資料的，如：
-![](/assets/caption-title.png)
+![]({{site.baseurl}}/assets/caption-title.png)
 
 ZK 提供兩種語法來載入資料：
 ### `@init` -- 一次性載入
@@ -46,7 +46,7 @@ ZK 提供兩種語法來載入資料：
 # 顯示集合物件
 有些 ViewModel 中的物件是集合物件如 Java `List`, `Map`, `Set`，這些物件綁定到單一元件上的屬性沒有意義，通常需要綁定到對等數量的元件上。接下來我們就用 Listbox 來顯示 ViewModel 中的「待辦事項」集合物件。
 
-![](/assets/todoList.png)
+![]({{site.baseurl}}/assets/todoList.png)
 
 首先定義資料類別：
 
@@ -198,7 +198,7 @@ public class TodoListViewModel{
 
 ## 用 EL 實做繪製邏輯
 有時候簡單的頁面變化可以用 EL 來做到，不需要寫程式，例如我想讓勾選待辦事項時，文字有刪去線效果：
-![](/assets/completeTodo.png)
+![]({{site.baseurl}}/assets/completeTodo.png)
 
 這可以輕易地用 CSS 做到，所以我們先設計好樣式：
 ```css

@@ -15,7 +15,7 @@ Shadow component 中的 [`<apply>`](http://books.zkoss.org/zk-mvvm-book/8.0/shad
 # 頁面切換
 接下來，我希望點選一個事項，就可編輯其內容。為了讓單一頁面維持精簡，我將「事項列表」與「編輯事項」分出來做成 2 個獨立的頁面，另有一個主頁面，當使用者點選一個事項時，我就把「事項列表」那一塊切換成「編輯事項」，編輯後再切換回來。因此總共有三個頁面，每個頁面套用各自的 ViewModel，這樣每個 ViewModel 只會包含相關性較高的應用程式邏輯，就可做到每個 ViewModel 內部內聚性高 (high coherence)，但 ViewModel 間耦合性低 (low coupling)。
 
-![](/assets/navigation.png)
+![]({{site.baseurl}}/assets/navigation.png)
 
 主頁面 myTodoList.zul
 ```xml
@@ -33,7 +33,7 @@ Shadow component 中的 [`<apply>`](http://books.zkoss.org/zk-mvvm-book/8.0/shad
 # ViewModel 間的溝通 - global command binding
 拆開成兩個 ViewModel 之後，問題就來了，現在主頁面與 todoList.zul 分屬不同的 ViewModel，兩者要怎麼溝通呢？其中一種方式就是透過 global command binding，它跟 command binding 類似，都是綁定在元件事件屬性上，事件發生時會觸發對應的 global command method，而預設會呼叫同一個 desktop 下所有 ViewModel 內的 global command method，是一種「一對多」的呼叫。
 
-![](/assets/global-command.png)
+![]({{site.baseurl}}/assets/global-command.png)
 
 我們讓 myTodoList.zul 負責控制頁面導向，因此實作一個 global command `navigate()` 讓其他頁面呼叫。實作的方式跟 command method 沒有什麼差別只是 annotation 換成 `@GlobalCommand`。
 ```java

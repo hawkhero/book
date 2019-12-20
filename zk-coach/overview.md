@@ -1,12 +1,12 @@
 
-<a href="https://www.zkoss.org"><img src="/assets/zklogo.png"/></a>
+<a href="https://www.zkoss.org">![]({{site.baseurl}}/assets/zklogo.png)</a>
 是一個基於 Java EE 與 AJAX 的使用者介面框架 (UI framework)，它提供上百個元件讓你打造快速反應的網頁應用程式 (web application)的介面，每個元件透過 AJAX 跟伺服器溝通後，只更新部分畫面，因此可以帶來類似於桌面應用程式的使用體驗。並可用 xml 語法來設計介面，既快速也易讀。以支援事件驅動(event-driven)的方式來實作應用程式邏輯，簡單易上手。
 
 更支援以 [MVVM (Model-View-ViewModel) 設計模式](http://books.zkoss.org/zk-mvvm-book/8.0/index.html)開發，讓你的應用程式跟 ZK 元件的耦合性更低，也讓畫面跟畫面控制邏輯解耦合，利用雙向資料繫結語法 (2 ways data binding) 來同步畫面(View) 與應用程式邏輯 (ViewModel) ，更利於打造[響應式設計](https://zh.wikipedia.org/wiki/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1)的網站。
 
 以下為部分 ZK 元件在預設佈景主題的概觀：
 
-![](/assets/iceblue.png)
+![]({{site.baseurl}}/assets/iceblue.png)
 
 想了解更多可以參觀：
 * [ZK 元件展示](https://www.zkoss.org/zkdemo/)

@@ -9,7 +9,7 @@ ZK 為一個基於 Java EE 技術的使用者介面框架 (UI framework)，提�
 
 **ZK Demo**
 
-![](/assets/zkdemo.png)
+![]({{site.baseurl}}/assets/zkdemo.png)
 
 你可以輕易地用一種 XML 格式的語法，我們稱 **ZUL** (ZK User Interface Markup Language)來建構介面，或是使用ZK Java API。
 
@@ -24,7 +24,7 @@ ZK 為一個基於 Java EE 技術的使用者介面框架 (UI framework)，提�
 # 架構清楚
 一般來說，我們會將網頁應用程式打造成多層(multi-tiers)架構（如下圖），每一層都是由功能相近的一群 class 組成，這樣的目的是讓整個系統易拓展、好維護、重用性高。
 
-![](/assets/multi-tiers.png)
+![]({{site.baseurl}}/assets/multi-tiers.png)
 
 ZK 對於自身的定位很明確是「UI 框架」，並不預設你要用何種服務層框架例如 Spring，或儲存相關的框架如 JPA 、Hibernate，當然也不會限制使用何種資料庫。所有跟控制 ZK 元件相關的邏輯主要都集中在控制器層 (Controller)，而該層就是由 Java class 實作，可以是 Composer/ViewModel，因此你可以輕易呼叫任何其他 Java class。因此跟 ZK 相關的程式碼完全不會混入你的其他層的實作。
 
@@ -32,4 +32,4 @@ ZK 對於自身的定位很明確是「UI 框架」，並不預設你要用何�
 # 免安裝線上試用
 [ZK fiddle](http://zkfiddle.org/) 是類似 [JSFiddle](https://jsfiddle.net/) 的網站，讓你線上撰寫 ZK ，無須安裝、設定環境，主要是讓你試玩元件的效果，真正開發時還是需要在本地端建立環境。
 
-![](/assets/zkfiddle.png)
+![]({{site.baseurl}}/assets/zkfiddle.png)

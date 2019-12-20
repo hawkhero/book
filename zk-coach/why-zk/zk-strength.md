@@ -28,11 +28,11 @@
 
 以下是 [24 個佈景主題](https://www.zkoss.org/zk85themedemo/)的概觀：
 
-![](/assets/ZK85_Theme_Lite.png)
+![]({{site.baseurl}}/assets/ZK85_Theme_Lite.png)
 
-![](/assets/ZK85_Theme_Dark.png)
+![]({{site.baseurl}}/assets/ZK85_Theme_Dark.png)
 
-![](/assets/ZK85_Theme_Mix.png)
+![]({{site.baseurl}}/assets/ZK85_Theme_Mix.png)
 
 ## 成熟的企業級框架
 ZK 從最初 [1.0 釋出](https://www.zkoss.org/support/about)至今已經超過 10 年，全世界（主要是歐美）都有[許多企業採用](https://www.zkoss.org/whyzk/WhosUsing)，因此是一個成熟的框架，多數企業所遇到的問題， ZK 都早已經有解法。
@@ -40,16 +40,16 @@ ZK 從最初 [1.0 釋出](https://www.zkoss.org/support/about)至今已經超過
 ## 豐富的元件
 ZK 最能提升你生產力的主因之一就是上百個重用性高的 UI 元件。透過 XML 格式的 ZUL 語言，你可以快速、輕易地用元件打造出一個複雜的頁面，並且能夠以 Java 控制，完全不需要 javascript。元件的設計都是針對常見的應用程式介面需求，從簡單的下拉清單到複雜的樹狀結構都有，你可以針對需求選用適合的元件，無需自己重新設計，讓你專注在你的專案業務邏輯上。
 
-![](/assets/iceblue.png)
+![]({{site.baseurl}}/assets/iceblue.png)
 
 使用 ZK 就可以輕易、快速地打造類似如下的複雜介面：
 
-![](/assets/complicatedUI.png)
+![]({{site.baseurl}}/assets/complicatedUI.png)
 
 ## 前後端整合的解決方案
 如果你選用一個純後端的框架(e.g. Struts...)，你無法很容易地實現一些前端效果。如果你選用一個前端框架 (Angular, React) 來實現前端效果的話，勢必會需要處理跟後端的溝通，包含資料傳輸格式與溝通的方式，這其實是個挺麻煩的問題，因為兩邊是異質性的平台/語言，採用 ZK 可以一次解決以上這些問題。
 
-![](/assets/client-server.png)
+![]({{site.baseurl}}/assets/client-server.png)
 
 
 ## 保留整合前端技術的可能性

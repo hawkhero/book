@@ -9,7 +9,7 @@ ZK 支援兩種設計模式：
 
 [MVC](https://zh.wikipedia.org/wiki/MVC) 其實是個通用的軟體模式詞彙，泛指一般把系統分成模型（Model）, 視圖（View）, 控制器（Controller）三部分的架構。ZK 借用這個詞來指稱「**直接透過元件 API 來控制元件**」的設計模式，這個設計模式是ZK 從最初就支援的。 在 ZK 的架構下， View 指得是元件所組成的畫面，可以說是 .zul 檔， Model 代表你的應用程式邏輯，Controller 介於 View 與 Model 之間，責任是控制 ZK 元件、接受並處理元件發出的事件、將後端資料送到畫面上、呼叫 Model 層。
 
-![](/assets/mvc.png)
+![]({{site.baseurl}}/assets/mvc.png)
 
 這種設計模式下，你必需實作一個繼承一個 ZK 內建控制器類別\(`SelectorComposer`\) 的 Controller，然後在 Controller 中實現你的應用程式邏輯。實現的方法就是透過實作 event listener method 傾聽元件上發出的事件（如 `button` 會發出 `onClick` 事件\)，再透過元件提供的 API 來控制畫面，例如我要將文字內容改變，就呼叫 `Label.setValue()`。
 
@@ -30,7 +30,7 @@ ZK 支援兩種設計模式：
 
 這個模式是 6.0 之後支援，ZK 也強力推廣的模式。這個模式的 Model 跟 View 所代表的角色跟 MVC 相同， **VM** 代表的是 **ViewModel**，其實是另一種形式的控制器角色，只是這個模式下，你不需呼叫元件的 API 來控制畫面，而是「**透過資料繫結 \(data binding\) 來控制元件**」。
 
-![](/assets/mvvm.png)
+![]({{site.baseurl}}/assets/mvvm.png)
 
 要實作一個 ViewModel class，你不需要繼承任何父類別，也不需要實作任何介面，只需新建一個 Java class \(POJO\) 即可。ViewModel 扮演控制器的方式是被動的，它只儲存以下兩者：
 

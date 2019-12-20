@@ -4,7 +4,7 @@
 
 元件線上展示，你可以從這裡看到每個元件實際上在瀏覽器中繪製出來的樣子，試著操作看看來確定哪個元件的功能是不是你要的，或是要怎麼用，找到之後下方就有該頁面的說明，程式碼分成 View, Controller, Model 是為了讓架構清楚。
 
-![](/assets/descriptionCode.png)
+![]({{site.baseurl}}/assets/descriptionCode.png)
 
 點 "Test Code online" 你可以連到 ZK Sandbox 可以讓你線上修改程式碼並即時呈現修改後的結果，如果想即時看一些功能的效果，可以透過這個方法。或是貼到 [zkfiddle](/zkfiddle.org)。
 "Dowhload This Demo" 可以下載該展示範例的程式碼，方便你複製到你的專案中使用。
@@ -18,7 +18,7 @@
 # 元件用法
 ZUL 是一個 XML 格式的 UI 語言，每個 tag 代表一個元件，tag 的名稱會對應到一個 Java class。
 
-![](/assets/window-window.png)
+![]({{site.baseurl}}/assets/window-window.png)
 
 元件主要透過屬性 (attribute) 來控制其行為與功能。每個屬性都對應到其 Java class 上的一個 setter，所以如果 `<button>` 上有`disabled` 屬性，代表 `Button.java` 上必定有 `setDisabled()`。
 

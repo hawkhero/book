@@ -27,7 +27,7 @@ Steve McConnel 所著的[軟體建構之道(Code Complete)](https://g.co/kgs/f4u
 主流的桌上瀏覽器按 F12 都可以開啟開發者工具，其中 Console 頁會顯示錯誤訊息，這通常也能幫助我們找到根因。
 以下是 Chrome 中的開發者工具：
 
-![](/assets/consoleTab.png)
+![]({{site.baseurl}}/assets/consoleTab.png)
 
 ### 常見錯誤訊息： java.lang.IllegalStateException: Access denied: component, <Listcell z_27_b53>, belongs to another desktop: [Desktop g272]
 使用 MVC pattern 可能會看過這個錯誤，原因為：
@@ -54,7 +54,7 @@ Steve McConnel 所著的[軟體建構之道(Code Complete)](https://g.co/kgs/f4u
 
 讓我們概略地看一次架構：
 
-![](/assets/architecture.png)
+![]({{site.baseurl}}/assets/architecture.png)
 
 1. 使用者點擊按鈕，觸發 DOM 事件
 2. ZK widget 發出事件通知 client engine
@@ -86,7 +86,7 @@ Steve McConnel 所著的[軟體建構之道(Code Complete)](https://g.co/kgs/f4u
 ### 是否發出預期的 ZK AU
 你可以透過 developer tool 來觀察，以 Chrome 為例，按 F12 打開，選 Network 頁，當你操作某個 ZK 元件而發出 event 時，會有一個路徑為 zkau 的請求發出如下：
 
-![](/assets/auEvent.png)
+![]({{site.baseurl}}/assets/auEvent.png)
 
 確認 AU 的確有發出之後，就該檢查是否是你預期的事件發出。觀察 Form Data 可得知事件的細節，其中包含以下欄位：
 
