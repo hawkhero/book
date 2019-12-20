@@ -1,10 +1,8 @@
 main:
   - title: "ZK 教練"
-    url: /zk-coach
+    url: /zk-coach/overview
   
 zk-coach:
-  - title: "ZK 教練"
-    url: /zk-coach/overview
   - title: "前言"
     url: /zk-coach/overview
   - title: "作者"
