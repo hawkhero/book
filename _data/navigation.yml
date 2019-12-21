@@ -36,7 +36,7 @@ zk-coach:
       url: /zk-coach/mvvm-tutorial/input-validation
     - title: "頁面切換"
       url: /zk-coach/mvvm-tutorial/navigation
-  - title: "簡易教程"
+  - title: "如何除錯"
     url: /zk-coach/debugging-tips  
   - title: "FAQ"
     url: /zk-coach/faq 
