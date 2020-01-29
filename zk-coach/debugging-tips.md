@@ -29,13 +29,6 @@ Steve McConnel 所著的[軟體建構之道(Code Complete)](https://g.co/kgs/f4u
 
 ![]({{site.baseurl}}/assets/consoleTab.png)
 
-### 常見錯誤訊息： java.lang.IllegalStateException: Access denied: component, <Listcell z_27_b53>, belongs to another desktop: [Desktop g272]
-使用 MVC pattern 可能會看過這個錯誤，原因為：
-* 你在 composer 中宣告一個 ZK 元件變數為 static，而且還呼叫其 setter
-解決方法：將該變數改成非 static
-* 你將一個 ZK 元件透過 event queue 傳到另一個 Desktop，而且還呼叫其 setter
-解決方法：不要傳元件參照，要傳資料即可
-
 
 
 ### 縮小問題範圍
@@ -50,9 +43,9 @@ Steve McConnel 所著的[軟體建構之道(Code Complete)](https://g.co/kgs/f4u
 
 
 ## b. 分析找到的資料並給出一個對根因的假設
-在取得資料之後，就要針對這些資料提出一個假設。如果對 ZK 的架構越了解，就越能夠提出越正確的假設。
+在取得資料之後，就要針對這些資料提出一個假設。如果對 ZK 的內部運作越了解，就越能夠提出越正確的假設。
 
-讓我們概略地看一次架構：
+讓我們概略地看一次事件處理流程：
 
 ![]({{site.baseurl}}/assets/architecture.png)
 
@@ -88,42 +81,31 @@ Steve McConnel 所著的[軟體建構之道(Code Complete)](https://g.co/kgs/f4u
 
 ![]({{site.baseurl}}/assets/auEvent.png)
 
-確認 AU 的確有發出之後，就該檢查是否是你預期的事件發出。觀察 Form Data 可得知事件的細節，其中包含以下欄位：
-
-* `dtid`, Desktop id
-* `cmd`, 事件名稱
-* `uuid`, 發生該事件的 DOM element id
-* `data`, 事件相關資料，每個事件會帶不同的資料
-
-因此對應使用者與元件互動的行為，就應產生對應的事件，例如按了按鈕就會發出 `onClick`、打開 popup 就發出 `onOepn`。
+確認 AU 的確有發出之後，就該檢查是否是你預期的事件發出，因著使用者與元件互動的行為，就應產生對應的事件，例如按了按鈕就會發出 `onClick`、打開 popup 就發出 `onOepn`。請看[AU 請求與回應](au-request-response)來了解怎麼檢查。
 
 
+### 傾聽器（event listener）是否執行
+如果使用者觸發的事件，在伺服器端有註冊對應的傾聽器 method，則 ZK 會呼叫該 method。要確認該 method 是否有被呼叫，可以印 log或透過 IDE 在 Java class 中設定中斷點。
 
-### 傾聽器是否執行
-
-透過 IDE 設定中斷點，是最常用的方法。
-
-所以你必須要能輕易的在你的 IDE 中執行你的專案，我推薦使用 maven jetty plugin:
-
-```xml
-	<build>
-		<finalName>${project.artifactId}</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
-				<version>${jetty.version}</version>
-				<configuration>
-					...
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-```
-優點是啟動快速、無須安裝。
 
 ### AU 回應內容是否如預期
+當 event listener 執行完後，其中所中呼叫的元件 API(主要是 setter)會產生相對的 AU 回應，這些回應內容包含對 client widget 的命令。因此不管是設定屬性、新增/刪除子元件，回應內容都會包含這些命令。你可以透過 developer tool 檢查 AU 回應的內容是否符合你事件傾聽器的實作。AU 回應的格式請參考 [AU 請求與回應](au-request-response)。
 
-<span style="font-size:34px; color:blue">
-（未完待續....）
-</span>
+![]({{site.baseurl}}/assets/auResponse.png)
+
+# 效能分析步驟
+請參考 
+[Step by Step Trouble Shooting
+](https://www.zkoss.org/wiki/ZK%20Developer's%20Reference/Performance%20Monitoring/Step%20by%20Step%20Trouble%20Shooting)，雖然內容較多，但說明的非常完整。
+
+簡單說效能瓶頸可分為三類：
+1. 瀏覽器端
+2. 網路
+3. 伺服器端
+
+一個簡便的分析法是，以 developer tool 檢查對應事件的 AU request 的 timing，如果 waiting time 過長，瓶頸可判定為「伺服器端」，如果 waiting time 很短，但是畫面繪製仍然過久，可判定為「瀏覽器端」。不管使哪一端的瓶頸，都需要用 profiler 工具進一步測量時間，才能找出哪一個 method/function 執行時間超過預期。
+
+
+# MVVM 除錯日誌
+MVVM 的運作有一大部分是在 framework 內部執行，因此從 ViewModel 中的程式，有時觀察不出根因，這時可設定 zk.xml 啟用除錯日誌 ([org.zkoss.bind.DebuggerFactory.enable](https://www.zkoss.org/wiki/ZK%20Configuration%20Reference/zk.xml/The%20Library%20Properties/org.zkoss.bind.DebuggerFactory.enable))，該日誌將會印出 ZK 寫入、載入哪些屬性到元件上，可以藉此觀察是否符合預期。
+
