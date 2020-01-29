@@ -38,5 +38,7 @@ zk-coach:
       url: /zk-coach/mvvm-tutorial/navigation
   - title: "如何除錯"
     url: /zk-coach/debugging-tips  
+  - title: "AU 請求與回應"
+    url: /zk-coach/au-request-response      
   - title: "FAQ"
     url: /zk-coach/faq 

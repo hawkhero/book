@@ -54,6 +54,37 @@ AU 代表 Asynchronous Update，就是 ZK 所發出的非同步 AJAX 請求。�
 ## 如何客制整套元件佈景主題 (Theme)
 ZK 8 之後建議以 ZK Theme Template 為基礎來客制元件佈景主題，[這是一個基於 git 的方法](https://www.zkoss.org/wiki/Small_Talks/2016/May/New_Approach_for_Building_Custom_ZK_Theme)，你從 [ZK Theme Template github repository](https://github.com/zkoss/zkThemeTemplate) fork 出自己的 repository，然後基於一個最接近自己預期的 theme 修改 LESS 檔。這樣的好處是如果 ZK 升級或修 bug，你的客制 theme 可以輕易透過 git 來合併變化。
 
-<span style="font-size: 34px;color:red">
+
+## 怎麼預覽 zul 繪製的結果
+要能快速執行你的 Maven 專案，我推薦使用 maven jetty plugin:
+
+```xml
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>${jetty.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+```
+優點是啟動快速、無須安裝。
+
+
+## 常見錯誤訊息
+
+### `java.lang.IllegalStateException: Access denied: component, <Listcell z_27_b53>, belongs to another desktop: [Desktop g272]`
+使用 MVC pattern 可能會看過這個錯誤，原因為：
+* 你在 composer 中宣告一個 ZK 元件變數為 static，而且還呼叫其 setter
+解決方法：將該變數改成非 static
+* 你將一個 ZK 元件透過 event queue 傳到另一個 Desktop，而且還呼叫其 setter
+
+**解決方法**
+
+不要傳元件參照，傳資料即可
+
+
+<span style="font-size: 34px;color:skyblue">
   找不到自己的想知道的基本概念？歡迎 Email 到 hawkhero at gmail
 </span>
