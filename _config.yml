@@ -34,7 +34,7 @@ defaults:
       sidebar:
         nav: "zk-coach"
 
-# comments:
-#   provider: "disqus"
-#   disqus:
-#     shortname: "keikai-doc"
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "book"
