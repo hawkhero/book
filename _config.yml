@@ -1,4 +1,4 @@
-remote_theme: "mmistakes/minimal-mistakes@4.17.2"
+remote_theme: "hawkhero/minimal-mistakes@book"
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache  #required by minimal-mistakes
