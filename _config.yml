@@ -24,7 +24,6 @@ defaults:
       path: ""
     values:
       layout: single
-      classes: wide
       toc: true
       comments: true
       share: true
