@@ -8,9 +8,9 @@ minimal_mistakes_skin: "air"
 search                    : true
 search_full_content       : true
 #  Lunr search only indexes collection documents e.g. posts or any custom collections you have. It does not currently index site.pages.';
-# search_provider: google
-# google:
-#   search_engine_id: 014994008257058938644:cb7qedcky7m
+search_provider: google
+google:
+  search_engine_id: 014592478545528320320:6hiqet5obn0
 
 
 analytics:
