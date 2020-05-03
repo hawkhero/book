@@ -1,4 +1,4 @@
-本書所使用的範例完整原始碼，你都可以在 https://github.com/hawkhero/zk-coach 找到。該專案使用 [Maven](https://zh.wikipedia.org/zh-tw/Apache_Maven) 管理。
+本書所使用的範例完整原始碼，你都可以在 [Github](https://github.com/hawkhero/zk-coach) 找到。該專案使用 [Maven](https://zh.wikipedia.org/zh-tw/Apache_Maven) 管理。
 
 # 執行專案
 切換到專案的目錄下 (\zk-coath)，也就是有 `pom.xml` 的目錄下
