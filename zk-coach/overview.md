@@ -1,5 +1,5 @@
 ---
-permalink: /zk-coach
+
 ---
 <a href="https://www.zkoss.org">![]({{site.baseurl}}/assets/zklogo.png)</a>
 是一個基於 Java EE 與 AJAX 的使用者介面框架 (UI framework)，它提供上百個元件讓你打造快速反應的網頁應用程式 (web application)的介面，每個元件透過 AJAX 跟伺服器溝通後，只更新部分畫面，因此可以帶來類似於桌面應用程式的使用體驗。並可用 xml 語法來設計介面，既快速也易讀。以支援事件驅動(event-driven)的方式來實作應用程式邏輯，簡單易上手。
