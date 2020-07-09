@@ -1,13 +1,3 @@
-# Keikai Document Website
-
-> Website: https://keikai.io  
-> Demo: https://keikai.io/demo  
-> Blog: https://keikai.io/blog
-
-# Document Folder Structure
-* `tutorial`: tutorial
-* `dev-ref`: Developer Reference
-
 # Preview at Local
 install necessary gem
 `bundle install`
